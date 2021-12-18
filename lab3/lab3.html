@@ -67,8 +67,8 @@
             </tbody>
         </table>
         <button type="button" role="button" id="button_avg" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Подсчитать средний балл</button>
-        
-        <button type="button" id="four" class="btn btn-primary"></button>
+        <br>
+        <button type="button" id="four" class="btn btn-primary">4 задание</button>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" role="dialog">
             <div class="modal-dialog">
@@ -164,6 +164,20 @@
             }
             var div = document.getElementById('average');
             div.innerHTML = values / rat.length;
+        }
+    </script>
+    <script>
+        four.onclick = function () {
+            var s = prompt('Введите массив через запятую без пробелов');
+            var array = s.split(',');
+            var new_array = [];
+            for (i = 0; i < array.length; i++) {
+                var a = parseInt(array[i]) % 5;
+                if (a == 0) {
+                    new_array.push(array[i]);
+                }
+            }
+            alert(new_array);
         }
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
