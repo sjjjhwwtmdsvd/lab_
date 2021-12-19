@@ -49,7 +49,7 @@
 				<label for="inputC">Введите значение C</label>
 				<input type="number" class="form-control" id="inputC" name="c" placeholder="Значение C">
 			</div>
-			<button type="submit" class="btn btn-primary">Проверисть существование</button>
+			<button type="submit" class="btn btn-primary">Вычислить площадь</button>
 		</form>
 		<?php
 			if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -58,12 +58,14 @@
 				$c=$_POST['c'];
 				if ($a+$b>$c and $a+$c>$b and $b+$c>$a and $a>0 and $b>0 and $c>0){
 					$p=($a+$b+$c)/2;
-					echo "Треугольник существует <br />Площадь треугольника =";
 					$s=$p*($p-$a)*($p-$b)*($p-$c);
-					echo $s;
+					echo "<h3>Треугольник существует <br />Площадь треугольника =";
+					echo $s; 
+					echo "</h3>";
+					
 				}
 				else
-					echo "<p>Треугольник не существует</p>";
+					echo "<h2>Треугольник не существует</h2>";
 			}
 		?>
 	</main>
